@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNCFForever - Accueil</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SNCFF</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="presentation">
+        <div class="container">
+            <h2>Bienvenue chez SNCFForever</h2>
+            <p>Voyagez avec nous vers de nouvelles destinations</p>
+            <a href="#" class="btn">Consultez les lignes disponibles</a>
+        </div>
+    </section>
+
+    <section class="cards">
+        <div class="card">
+            <img src="{% static 'img/Lucas_Martin.webp' %}" alt="Lucas_Martin">
+            <div class="card-info">
+              <h2>Lucas Martin</h2>
+              <p>Métier : Contrôleur</p>
+              <p>Histoire : Lucas a toujours été fasciné par le voyage en train. Après des études en gestion et logistique, il a décidé de rejoindre la SNCF en tant que contrôleur. Lucas est très consciencieux dans son travail et veille au respect des règles de sécurité à bord des trains, tout en étant attentif au confort des passagers.</p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <img src="{% static 'img/Marie_Duboi.webp' %}" alt="Marie_Duboi">
+            <div class="card-info">
+              <h2>Marie Dubois</h2>
+              <p>Métier : Chef de gare</p>
+              <p>Histoire : Marie est une passionnée de chemins de fer depuis son enfance. Elle a rejoint la SNCF dès sa sortie de l'école et a gravi les échelons pour devenir chef de gare. Toujours souriante et efficace, Marie veille à ce que tout fonctionne parfaitement dans sa gare, des horaires des trains à la satisfaction des passagers.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-info">
+              <h2>Jane Smith</h2>
+              <p>Situation : Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SNCFForever. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
