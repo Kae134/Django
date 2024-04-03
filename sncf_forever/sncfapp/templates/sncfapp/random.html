@@ -1,11 +1,89 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random</title>
+    <title>SNCFForever - Accueil</title>
+    <link rel="stylesheet" type="text/css" href=" {% static '/css/style.css' %}">
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <h1>SNCFF</h1>
+            <nav>
+              <ul>
+                <li><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li><a href="{% url 'show' %}">Services</a></li>
+                <li><a href="{% url 'random' %}">Random</a></li>
+                <li><a href="{% url 'creation' %}">Creation</a></li>
+              </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main> 
+
+      <section id="1" class="presentation">
+        <div class="container">
+            <h2>Bienvenue chez SNCFForever</h2>
+            <p>Voyagez avec nous vers de nouvelles destinations</p>
+            <a href="#" class="btn">Consultez les lignes disponibles</a>
+        </div>
+      </section>
+
+      <section id="2" class="cards_employes">
+        <div class="card">
+            <img src="{% static 'img/Lucas_Martin.webp' %}" alt="Lucas_Martin">
+            <div class="card-info">
+              <h2>Lucas Martin</h2>
+              <p>Métier : Contrôleur</p>
+              <p>Histoire : Lucas a toujours été fasciné par le voyage en train. Après des études en gestion et logistique, il a décidé de rejoindre la SNCF en tant que contrôleur. Lucas est très consciencieux dans son travail et veille au respect des règles de sécurité à bord des trains, tout en étant attentif au confort des passagers.</p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <img src="{% static 'img/Marie_Duboi.webp' %}" alt="Marie_Duboi">
+            <div class="card-info">
+              <h2>Marie Dubois</h2>
+              <p>Métier : Chef de gare</p>
+              <p>Histoire : Marie est une passionnée de chemins de fer depuis son enfance. Elle a rejoint la SNCF dès sa sortie de l'école et a gravi les échelons pour devenir chef de gare. Toujours souriante et efficace, Marie veille à ce que tout fonctionne parfaitement dans sa gare, des horaires des trains à la satisfaction des passagers.</p>
+            </div>
+          </div>
+      </section>
+
+      <section id="3" class="cards_history">
+        <h1> Si votre train a du retard, voici quelques informations interessantes !</h1>
+        <div class="history-card">
+          <div class="history-header">
+              <h2>L'invention du chemin de fer</h2>
+          </div>
+          <div class="history-body">
+              <p>Le chemin de fer est apparu au début du 19e siècle en Angleterre. La première ligne publique de train à vapeur a été inaugurée en 1825, reliant Stockton à Darlington.</p>
+              <p>Cette invention a révolutionné les transports, permettant des déplacements plus rapides et plus efficaces de marchandises et de passagers.</p>
+          </div>
+      </div>
+      <div class="history-card">
+          <div class="history-header">
+              <h2>L'expansion des réseaux ferroviaires</h2>
+          </div>
+          <div class="history-body">
+              <p>À partir du milieu du 19e siècle, les réseaux ferroviaires se sont étendus rapidement à travers l'Europe, puis dans le monde entier. Des milliers de kilomètres de voies ferrées ont été construits, facilitant le commerce et les échanges culturels.</p>
+              <p>Cette période a également vu l'émergence de grandes compagnies ferroviaires telles que la Compagnie des chemins de fer du Nord en France et la London and North Western Railway au Royaume-Uni.</p>
+          </div>
+      </div>
+    </div>
+
+      </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SNCFForever. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

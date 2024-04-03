@@ -13,12 +13,12 @@
         <div class="container">
             <h1>SNCFF</h1>
             <nav>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">À propos</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+              <ul>
+                <li><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li><a href="{% url 'showall' %}">Services</a></li>
+                <li><a href="{% url 'random' %}">Random</a></li>
+                <li><a href="{% url 'creation' %}">Creation</a></li>
+              </ul>
             </nav>
         </div>
     </header>
@@ -29,7 +29,7 @@
         <div class="container">
             <h2>Bienvenue chez SNCFForever</h2>
             <p>Voyagez avec nous vers de nouvelles destinations</p>
-            <a href="#" class="btn">Consultez les lignes disponibles</a>
+            <a href="{% url 'showall' %}" class="btn">Consultez les lignes disponibles</a>
         </div>
       </section>
 

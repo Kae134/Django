@@ -23,4 +23,6 @@ urlpatterns = [
     path('random/', views.random, name="random"),
     path('showall/', views.showall, name="showall"),
     path('show/', views.show, name="show"), 
+    path('show/<id>/', views.show_id, name='show_id'),
+
 ]

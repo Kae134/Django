@@ -1,11 +1,49 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show-all</title>
+    <title>SNCFForever - Accueil</title>
+    <link rel="stylesheet" type="text/css" href=" {% static '/css/style.css' %}">
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <h1>SNCFF</h1>
+            <nav>
+              <ul>
+                <li><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li><a href="{% url 'show' %}">Services</a></li>
+                <li><a href="{% url 'random' %}">Random</a></li>
+                <li><a href="{% url 'creation' %}">Creation</a></li>
+              </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main> 
+
+      <section id="1" class="presentation">
+        <div class="container">
+            <h2>Bienvenue chez SNCFForever</h2>
+            <p>Voyagez avec nous vers de nouvelles destinations</p>
+            <a href="#" class="btn">Consultez les lignes disponibles</a>
+        </div>
+      </section>
+          
+        {% for element in trains %}
+            <li>{{ element.name }}</li>
+        {% endfor %}
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SNCFForever. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
