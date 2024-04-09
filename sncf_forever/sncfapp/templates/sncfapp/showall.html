@@ -12,27 +12,40 @@
     <header>
         <div class="container">
             <h1>SNCFF</h1>
-            <nav>
-              <ul>
-                <li><a href="{% url 'accueil' %}">Accueil</a></li>
-                <li><a href="{% url 'show' %}">Services</a></li>
-                <li><a href="{% url 'random' %}">Random</a></li>
-                <li><a href="{% url 'creation' %}">Creation</a></li>
-              </ul>
+            <nav class="nav-list">
+                <ul>
+                    <li><a href="{% url 'accueil' %}">Accueil</a></li>
+                    <li><a href="{% url 'showall' %}">Lignes</a></li>
+                    <li><a href="{% url 'history' %}">Histoire</a></li>
+                    <li><a href="{% url 'creation' %}">Creation</a></li>
+                </ul>
             </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
         </div>
+        </div>
+        <ul class="nav-list-burger" id="nav-list-burger">
+            <li><a href="{% url 'accueil' %}">Accueil</a></li>
+            <li><a href="{% url 'showall' %}">Lignes</a></li>
+            <li><a href="{% url 'history' %}">Histoire</a></li>
+            <li><a href="{% url 'creation' %}">Creation</a></li>
+        </ul>
     </header>
 
     <main> 
 
-      <section id="1" class="presentation">
-        <div class="container">
-            <h2>Bienvenue chez SNCFForever</h2>
-            <p>Voyagez avec nous vers de nouvelles destinations</p>
-            <a href="#" class="btn">Consultez les lignes disponibles</a>
-        </div>
-      </section>
-          
+        <section id="1" class="search">
+            <div class="search-container">
+                <p> Cherchez la ligne que vous desirez : </p>
+                <form class="search_train" action="/search" method="get">
+                    <input type="text" placeholder="Recherche..." name="q" id="search-input">
+                    <button class="btn" type="submit">Rechercher</button>
+                </form>
+            </div>
+        </section>
+
         {% for element in trains %}
             <li>{{ element.name }}</li>
         {% endfor %}
@@ -44,6 +57,6 @@
             <p>&copy; 2024 SNCFForever. Tous droits réservés.</p>
         </div>
     </footer>
-    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/menu_burger.js' %}"></script>
 </body>
 </html>

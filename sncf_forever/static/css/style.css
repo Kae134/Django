@@ -73,7 +73,6 @@ main {
 
 .presentation {
     display: flex;
-    background-image: url('train-background.jpg');
     background-size: cover;
     color: black;
     text-align: center;
@@ -99,7 +98,7 @@ main {
     margin-bottom: 30px;
 }
 
-.btn {
+.presentation .btn {
     display: inline-block;
     background: rgb(120,0,184);
     background: linear-gradient(90deg, rgba(120,0,184,1) 0%, rgba(196,2,201,1) 35%, rgba(255,0,83,1) 100%);
@@ -111,20 +110,8 @@ main {
     transition: all 0.2s ease;
 }
 
-.btn:hover {
+.presentation .btn:hover {
     animation: gradient 4s ease-in infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 /* cards des employes */
@@ -170,9 +157,18 @@ margin-top: 0;
 color: #666;
 }
 
+
+
+
+
 /* cards de l'histoire du train */
 .cards_history {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 
 .history-card {
@@ -218,11 +214,149 @@ footer p {
 }
 
 
+
+
+
+
+/* barre de recherche */
+.search {
+    display: flex;
+    background-size: cover;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.search-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-input {
+    padding: 10px;
+    width: 50rem;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.search_train {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container .btn {
+    display: inline-block;
+    border: none;
+    height: 48px;
+    width: 10rem;
+    background: rgb(120,0,184);
+    background: linear-gradient(90deg, rgba(120,0,184,1) 0%, rgba(196,2,201,1) 35%, rgba(255,0,83,1) 100%);
+    background-size: 200% 200%;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.search-container .btn:hover {
+    animation: gradient 4s ease-in infinite;
+}
+
+
+
+
+
+
+
+
+/* Menu burger */
+.nav-list-burger {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list-burger li {
+    margin: 0 10px;
+}
+
+.nav-list-burger a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.active-nav-burger {
+    display: flex ;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+
+/* Keyframes */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 @keyframes hover-cards {
     0% {
         transform: scale(1);
     }
     100% {
         transform: scale(1.025);
+    }
+}
+
+
+/* Dependances de la taille de l'ecran */
+
+@media screen and (max-width: 700px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-list {
+        display: none;
+    }
+    .search_train {
+        flex-direction: column;
+        width: 80%;
+    }
+    #search-input {
+        width: 100%; 
+        height: 32px; 
+    }
+
+    .search-container .btn {
+        width: 100%;
+        height: 32px; 
     }
 }

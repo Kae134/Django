@@ -33,3 +33,6 @@ def show_id(request, id):
         'train':Train,
     })
 
+def history(request) :
+    return render(request, "sncfapp/history.html",{})
+

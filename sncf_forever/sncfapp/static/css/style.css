@@ -69,11 +69,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 82px;
 }
 
 .presentation {
     display: flex;
-    background-image: url('train-background.jpg');
     background-size: cover;
     color: black;
     text-align: center;
@@ -99,7 +99,7 @@ main {
     margin-bottom: 30px;
 }
 
-.btn {
+.presentation .btn {
     display: inline-block;
     background: rgb(120,0,184);
     background: linear-gradient(90deg, rgba(120,0,184,1) 0%, rgba(196,2,201,1) 35%, rgba(255,0,83,1) 100%);
@@ -111,20 +111,8 @@ main {
     transition: all 0.2s ease;
 }
 
-.btn:hover {
+.presentation .btn:hover {
     animation: gradient 4s ease-in infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 /* cards des employes */
@@ -135,7 +123,8 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
 }
 
 .card {
@@ -170,6 +159,10 @@ margin-top: 0;
 color: #666;
 }
 
+
+
+
+
 /* cards de l'histoire du train */
 .cards_history {
     display: flex;
@@ -177,7 +170,8 @@ color: #666;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
 }
 
 .history-card {
@@ -223,11 +217,207 @@ footer p {
 }
 
 
+
+
+
+
+/* barre de recherche */
+.search {
+    display: flex;
+    background-size: cover;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.search-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-input {
+    padding: 10px;
+    width: 50rem;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.search_train {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container .btn {
+    display: inline-block;
+    border: none;
+    height: 48px;
+    width: 10rem;
+    background: rgb(120,0,184);
+    background: linear-gradient(90deg, rgba(120,0,184,1) 0%, rgba(196,2,201,1) 35%, rgba(255,0,83,1) 100%);
+    background-size: 200% 200%;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.search-container .btn:hover {
+    animation: gradient 4s ease-in infinite;
+}
+
+
+
+
+
+
+
+
+/* Menu burger */
+.nav-list-burger {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    width: 100%;
+    z-index: -10;
+    padding: 0;
+}
+
+.nav-list-burger::before { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    z-index: -10;
+}
+
+.nav-list-burger li {
+    margin: 0 10px;
+}
+
+.nav-list-burger a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.active-nav-burger {
+    animation: transition-burger-nav 0.2s ease-out;
+    top: 5rem;
+    display: flex ;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    position: absolute;
+    transform: rotate(-405deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    position: absolute;
+    transform: rotate(405deg);
+}
+
+
+/* Keyframes */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 @keyframes hover-cards {
     0% {
         transform: scale(1);
     }
     100% {
         transform: scale(1.025);
+    }
+}
+
+@keyframes transition-burger-nav {
+    0% {
+        top: -5rem;
+    }
+    100% {
+        top: 5rem;
+    }
+}
+
+
+/* Dependances de la taille de l'ecran */
+
+@media screen and (max-width: 700px) {
+    header {   
+        background-color: #fff;
+    }
+    .cards_employes, .cards_history {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .cards_history h1 {
+        padding: 1rem;
+        text-align: center;
+    }
+    .card {
+        width: 80%;
+        overflow:scroll;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-list {
+        display: none;
+    }
+    .search_train {
+        flex-direction: column;
+        width: 80%;
+    }
+    #search-input {
+        width: 100%; 
+        height: 32px; 
+    }
+
+    .search-container .btn {
+        width: 100%;
+        height: 32px; 
     }
 }
