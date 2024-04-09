@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from sncfapp.models import Trains
 from random import randint
 
@@ -26,13 +26,23 @@ def show(request) :
     return render(request, "sncfapp/show.html",{})
 
 def show_id(request, id):
-    Train = Trains.objects.get(trainId=id)
+    
     # All_Trains = Trains.objects.all()
-
-    return render(request, "sncfapp/show.html", {
-        'train':Train,
-    })
+    try:  
+        Train = Trains.objects.get(trainId=id)  
+        return render(request, "sncfapp/show.html", {
+            'train':Train,
+        })
+    except Trains.DoesNotExist:
+            return render(request, 'sncfapp/train_not_found.html')
+    
 
 def history(request) :
     return render(request, "sncfapp/history.html",{})
 
+def process_train_id(request) :
+    if request.method == 'POST':
+        train_id = request.POST.get('train_id')
+        return show_id(request, train_id)
+    else:
+        showall(request)

@@ -25,5 +25,5 @@ urlpatterns = [
     path('showall/', views.showall, name="showall"),
     path('show/', views.show, name="show"), 
     path('show/<id>/', views.show_id, name='show_id'),
-
+    path('form/', views.process_train_id, name='process_form'),
 ]
