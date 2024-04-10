@@ -10,39 +10,39 @@
 </head>
 <body>
     <header>
-      <div class="container">
-          <h1>SNCFF</h1>
-          <nav class="nav-list">
-              <ul>
-                  <li><a href="{% url 'accueil' %}">Accueil</a></li>
-                  <li><a href="{% url 'showall' %}">Lignes</a></li>
-                  <li><a href="{% url 'history' %}">Histoire</a></li>
-                  <li><a href="{% url 'creation' %}">Creation</a></li>
-              </ul>
-          </nav>
-      <div class="menu-toggle" id="mobile-menu">
-          <span class="bar bar1"></span>
-          <span class="bar bar2"></span>
-          <span class="bar bar3"></span>
-      </div>
-      </div>
-      <ul class="nav-list-burger" id="nav-list-burger">
-          <li><a href="{% url 'accueil' %}">Accueil</a></li>
-          <li><a href="{% url 'showall' %}">Lignes</a></li>
-          <li><a href="{% url 'history' %}">Histoire</a></li>
-          <li><a href="{% url 'creation' %}">Creation</a></li>
-      </ul>
+        <div class="container">
+            <a href="/sncfapp/accueil"><h1>SNCFF</h1></a>
+            <nav class="nav-list">
+                <ul>
+                    <li><a href="{% url 'accueil' %}">Accueil</a></li>
+                    <li><a href="{% url 'showall' %}">Lignes</a></li>
+                    <li><a href="{% url 'history' %}">Histoire</a></li>
+                    <li><a href="{% url 'creation' %}">Creation</a></li>
+                </ul>
+            </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+        </div>
+        </div>
+        <ul class="nav-list-burger" id="nav-list-burger">
+            <li><a href="{% url 'accueil' %}">Accueil</a></li>
+            <li><a href="{% url 'showall' %}">Lignes</a></li>
+            <li><a href="{% url 'history' %}">Histoire</a></li>
+            <li><a href="{% url 'creation' %}">Creation</a></li>
+        </ul>
     </header>
 
     <main> 
 
-      <section id="1" class="presentation">
-        <div class="container">
-            <h2>Bienvenue chez SNCFForever</h2>
-            <p>Voyagez avec nous vers de nouvelles destinations</p>
-            <a href="{% url 'showall' %}" class="btn">Consultez les lignes disponibles</a>
-        </div>
-      </section>
+        <section id="1" class="presentation">
+            <div class="container">
+                <h2>Bienvenue chez SNCFForever</h2>
+                <p>Voyagez avec nous vers de nouvelles destinations</p>
+                <a href="{% url 'showall' %}" class="btn">Consultez les lignes disponibles</a>
+            </div>
+        </section>
 
     </main>
 

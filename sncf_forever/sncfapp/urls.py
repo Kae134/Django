@@ -16,14 +16,17 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
+from django.views.generic import RedirectView
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/sncfapp/accueil/', permanent=True)),
     path('accueil/', views.accueil, name="accueil"),
     path('creation/', views.creation, name="creation"),
     path('history', views.history, name="history"),
     path('random/', views.random, name="random"),
     path('showall/', views.showall, name="showall"),
     path('show/', views.show, name="show"), 
-    path('show/<id>/', views.show_id, name='show_id'),
-    path('form/', views.process_train_id, name='process_form'),
+    path('show/<id>/', views.show_train, name='show_train'),
+    path('process_train/', views.process_train, name='process_train'),
+    path('save_train/', views.save_train, name='save_train'),
 ]

@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>SNCFF</h1>
+            <a href="/sncfapp/accueil"><h1>SNCFF</h1></a>
             <nav>
                 <ul>
                     <li><a href="{% url 'accueil' %}">Accueil</a></li>
@@ -25,13 +25,30 @@
 
     <main> 
 
-      <section id="1" class="presentation">
-        <div class="container">
-            <h2>Bienvenue chez SNCFForever</h2>
-            <p>Voyagez avec nous vers de nouvelles destinations</p>
-            <a href="#" class="btn">Consultez les lignes disponibles</a>
-        </div>
-      </section>
+        <section id="" class="creation">
+            <div class="add_train">
+                <h2>Ajouter un Train</h2>
+                <form class="form_add_train" method="post" action="{% url 'save_train' %}">
+                    {% csrf_token %}
+                    <label for="name">Nom du train:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="departure">Heure de départ:</label>
+                    <input type="time" id="departure" name="departure" required>
+
+                    <label for="arrive">Heure d'arrivée:</label>
+                    <input type="time" id="arrive" name="arrive" required>
+
+                    <label for="destination">Destination:</label>
+                    <input type="text" id="destination" name="destination" required>
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+
+                    <input type="submit" value="Ajouter">
+                </form>
+            </div>
+        </section>
 
     </main>
 
