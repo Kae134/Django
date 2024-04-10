@@ -47,7 +47,7 @@ header::before {
 }
 
 header h1 {
-    position: relative; /* Pour que le texte se superpose à l'arrière-plan flou */
+    position: relative;
     font-size: 36px;
 }
 
@@ -74,6 +74,9 @@ main {
     align-items: center;
     margin-top: 82px;
 }
+
+
+/* Presentation */
 
 .presentation {
     display: flex;
@@ -118,7 +121,9 @@ main {
     animation: gradient 4s ease-in infinite;
 }
 
-/* cards des employes */
+
+
+/* Cards des employes */
 
 .cards_employes {
     display: flex;
@@ -166,7 +171,8 @@ color: #666;
 
 
 
-/* cards de l'histoire du train */
+/* Cards de l'histoire du train */
+
 .cards_history {
     display: flex;
     flex-direction: column;
@@ -207,6 +213,10 @@ color: #666;
 }
 
 
+
+
+/* Footer */
+
 footer {
     display: flex;
     align-items: center;
@@ -226,7 +236,8 @@ footer p {
 
 
 
-/* barre de recherche */
+/* Barre de recherche */
+
 .search {
     display: flex;
     background-size: cover;
@@ -297,6 +308,7 @@ footer p {
 
 
 /* All trains */
+
 .all-trains {
     display: flex;
     align-items: center;
@@ -377,6 +389,10 @@ body {
     text-decoration: underline;
 }
 
+
+
+/* Modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -438,7 +454,11 @@ body {
 }
 
 
+
+
+
 /* Menu burger */
+
 .nav-list-burger {
     display: none;
     position: absolute;
@@ -593,6 +613,7 @@ body {
 
 
 /* Creation */
+
 .creation {
     display: flex;
     align-items: center;
@@ -656,6 +677,7 @@ body {
 
 
 /* Bouton random */
+
 .dreamTrainLink {
     display: inline-block; 
     padding: 10px 20px; 
