@@ -1,6 +1,0 @@
-refaire un site sur lequelle on listera les trains, ...
-
-1 page qui liste tt les trains avec horaire de depart, gare d'arrivé (10/20 trains) avec un bouton détails
-
-quand on clique sur le bouton ca amène sur une autre page avec par exemple un plan de train, des infos en plus, ...
-
